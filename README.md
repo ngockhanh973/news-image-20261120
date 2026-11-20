@@ -1,44 +1,55 @@
-# news-image-20261120 — v2 refresh
+# news-image-20261120 — v3 refresh
 
 Front page "THE WORLD TODAY — Friday 20 November 2026", **35 stories**,
 drawn with PIL (same layout family as the 19/11 v15 page: 3 big cards,
 8 small cards, world map, "Friday by the numbers", 24 briefs, date check).
 
-- `entry.png` — 1024×1024 PNG, 235,200 B, sha256
-  `eeb1a4c9030139b59859bcab81cadcc6d00921d61d3279a7c8ca5ec95624d13f`
-  (drawn twice from `draw20-v2.py`, byte-identical both runs).
-- `main.ts` — copies `entry.png` to the output dir, then reads it back
-  and throws unless byte-identical.
+- `entry.png` — 1024×1024 PNG, 235,982 B, sha256
+  `8eb7dd38f3250977aee28b2502dc0c923d15611b4abd41b8324243ce6399443e`
+  (drawn twice from `draw20-v3.py`, byte-identical both runs, no render WARNs).
+- `main.ts` — copies `entry.png` to the output dir, checks the PNG magic
+  bytes first, then reads it back and throws unless byte-identical.
 
-## What changed vs v1 (27 → 35 stories, refreshed 20/11 ~19:45 +07)
+## What changed vs v2 (still 35 stories, refreshed 20/11 ~20:00 +07)
 
-- **1 Akvan aftermath:** landfall done 7:30am, 70–80 km/h gusting 90,
-  weakened to a deep depression; **no major damage, no lives lost**;
-  372,000 evacuated (IMD, NDTV, The Hindu, New Indian Express).
-- **2 Markets:** Thursday close S&P −2% etc. + Friday futures lower,
-  Anthropic −8% pre-market after its debut reversal (Reuters, IBD).
-- **3 Kushner:** Friday pushback — Ryabkov calls NATO-style guarantees
-  "totally unacceptable"; Macron reopens NATO membership (Reuters, AP).
-- **4 Trump/Iran:** Senate again rejects a war curb; Netanyahu pressing
-  for a 4–7-day campaign (NYT via Reuters/Haaretz).
-- **6 Kyiv barrage (replaces Putin Kerch vow):** 110+ missiles overnight,
-  8 killed, 3 Dnipro bridges damaged; Poland airspace violated, Tusk
-  calls it a "deliberate provocation" (CNN, The Times, Kyiv Post).
-- **8 Cricket day 2:** NZ 368 (Nicholls 175*, Phillips 118), India 159/1
-  (Jaiswal 85, Rahul 52*) (Cricbuzz, New Indian Express).
-- **9 India banks (replaces H5N1 vaccine → brief 35):** Nifty Bank record
-  close 64,635 (+2.5%), Sensex +898 to 83,920, Nifty 25,801 — 9-month
-  highs (CNBC-TV18, ZeeBiz, Moneycontrol).
-- **New briefs 28–35:** Riyadh Friday intercept, Las Vegas F1 FP2
-  (Russell tops wet session), White House cyber chief ousted, Rams'
-  Puka Nacua suspended, UFC Fiorot banned, UK hands US soldier accused
-  of spying to the US, Gaza aid call, Bhopal H5N1 vaccine.
+- **Card 2 body:** Friday weekly wrap added — STOXX heads for worst week
+  since March, Asia-Pacific −8.5% in worst week since 2020 (Reuters).
+- **Card 6 body corrected:** "110+ missiles" was wrong — the verified
+  count is 84 cruise missiles + 400+ drones; 8 killed (6 Kyiv + 2 Lviv),
+  PM Koretskyi via Al Jazeera/Straits Times. Numbers strip now reads
+  "400+ drones at Kyiv".
+- **9 briefs swapped for verified late-Friday stories:**
+  - **13 Nigeria:** moves to end jail for attempted suicide (BBC).
+  - **16 GTA VI:** $2.36bn day one, 24.6m copies sold (BBC/Reuters,
+    Sensor Tower estimate).
+  - **17 Poland:** jets scrambled as unknown objects fall near the
+    Ukraine border (Reuters).
+  - **21 London:** UK–EU agree a youth-mobility scheme (BBC).
+  - **23 Rome:** CGIL 24-hr general strike, marches in 100+ cities
+    (Reuters/AP).
+  - **24 S. Africa:** 581 women killed in 3 months, crime stats show (BBC).
+  - **25 Space:** BepiColombo reaches Mercury after an 8-year trip
+    (ESA/BBC; orbit burn Sat 21 Nov).
+  - **26 Baghdad:** troops deploy in a Kataib Hezbollah stronghold (Reuters).
+  - **27 Antalya:** COP31 final day, no deal in sight as the draft drops
+    the fossil phase-out (CNA/Reuters).
+- **Region bar:** ASIA 5, MIDDLE EAST 5, EUROPE 6, AMERICAS 9, AFRICA 5,
+  WORLD 5. DATE CHECK drops COP31 (now covered as the Friday endgame)
+  and adds "Bukele files (Thu)".
+- **Deliberately NOT used (date discipline):** Bukele registered on
+  Thu 19/11 (Reuters Nov 19) even though the current #1 entry lists it
+  as Friday news; the Daraxonrasib pancreatic-pill figure could not be
+  verified in search; the Denmark Greenland defence bill was unverified.
+  Leads for COP31/BepiColombo/Italy came from mining the #1 entry
+  (888dao-sats, 0.991652, 36 stories).
 
 ## History
 
 v1 (27 stories, built 20/11 ~07:15 +07) lives in `news-image-20261120`
-(commit `e9f9847`); this repo is beacon-rooted (`makefun init`, anchor
-`da97075`, drand round 34124920) and v1 was ported here byte-identical
-before the v2 refresh. The LICENSE here is the one `makefun init` wrote
-(copyright holder: the entry wallet), which differs from v1's LICENSE
-only in that holder line.
+(commit `e9f9847`); v2 (35 stories, submitted 19:42:49 20/11, submission
+`01a1f8fb-1f1c-7723-b63a-70e9d5c98704`, judge 0.979552, 11W/1D/0L) is
+commit `4c49b03`. This repo is beacon-rooted (`makefun init`, anchor
+`da97075`, drand round 34124920). NOTE: the local repo has no git remote
+and no `ngockhanh973/news-image-20261120` repo exists on GitHub yet
+(checked 20/11 ~20:00 +07) — v2 was submitted via source bundle, so v3
+creates the GitHub repo before pushing.
